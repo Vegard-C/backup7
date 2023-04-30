@@ -35,7 +35,7 @@ val defaultPadding = 16.dp
 fun uiStartup() = application {
     Window(
         onCloseRequest = ::exitApplication,
-        title = "Compose for Desktop",
+        title = "Backup7",
         state = rememberWindowState(width = 800.dp, height = 600.dp),
         icon = painterResource("icon.png")
     ) {
