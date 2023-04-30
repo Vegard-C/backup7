@@ -25,6 +25,7 @@ import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import androidx.compose.ui.Modifier
 import java.io.File
+import java.util.UUID
 import kotlin.system.exitProcess
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -215,7 +216,8 @@ fun helpInfoWindow(state: MutableState<AppState>) {
         Text("You must configurate this program by creating a file")
         Output(f.canonicalPath)
         Text("This file must contain configurations similar to this:")
-        Output("password=JSa7az2y6qHG8XXvwac2\nsource=Z:\\backupsource\npath7zip=C:\\Program Files\\7-Zip\\7z.exe\nlocations=Z:\\backup1;Z:\\backup2")
+        val passwd = UUID.randomUUID().toString().replace("-","")
+        Output("password=$passwd\nsource=Z:\\backupsource\npath7zip=C:\\Program Files\\7-Zip\\7z.exe\nlocations=Z:\\backup1;Z:\\backup2")
         Text("Note that the password, source and locations for backup must not contain spaces or special chars")
         Text("Locations for backup may be multiple seperated by ';'")
         BRow {
